@@ -8,10 +8,15 @@
 - name: Execute scripts in bashrc.d
   blockinfile:
       dest: "{{ ansible_user_dir }}/.bashrc"
+      state: present
       block: |
           if test -d "{{ user_bashrcd }}"; then
-            find "{{ user_bashrcd }}" -type f | sort | while read file; do
+            for file in $(find "{{ user_bashrcd }}" -type f | sort); do
               source "${file}"
             done
           fi
 
+- name: Have base script
+  copy:
+      src: 00-functions.conf
+      dest: "{{ user_bashrcd }}"
