@@ -1,0 +1,2 @@
+---
+user_bashrcd: "{{ ansible_user_dir }}/.local/bashrc.d"

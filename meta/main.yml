@@ -1,0 +1,16 @@
+galaxy_info:
+  author: Robert Larsen <robert@the-playground.dk>
+  description: Makes base changes I want in all my installations
+  company: None
+  license: GPLv2
+  min_ansible_version: 2.2
+  platforms:
+  - name: Fedora
+    versions:
+    - all
+  - name: Ubuntu
+    versions:
+    - focal
+  galaxy_tags:
+      - base
+dependencies: []

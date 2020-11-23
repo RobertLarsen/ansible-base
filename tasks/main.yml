@@ -1,0 +1,17 @@
+---
+- name: Have local bashrc.d directory
+  file:
+      path: "{{ user_bashrcd }}"
+      state: directory
+      mode: 0700
+
+- name: Execute scripts in bashrc.d
+  blockinfile:
+      dest: "{{ ansible_user_dir }}/.bashrc"
+      block: |
+          if test -d "{{ user_bashrcd }}"; then
+            find "{{ user_bashrcd }}" -type f | sort | while read file; do
+              source "${file}"
+            done
+          fi
+
