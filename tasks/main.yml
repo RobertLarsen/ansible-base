@@ -20,3 +20,10 @@
   copy:
       src: 00-functions.conf
       dest: "{{ user_bashrcd }}"
+
+- name: Have nerd font
+  become: true
+  unarchive:
+      src: hack-nerd-font.zip
+      dest: /usr/share/fonts
+  notify: Set default monospace system font
