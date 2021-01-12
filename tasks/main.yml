@@ -14,6 +14,7 @@
             for file in $(find "{{ user_bashrcd }}" -type f | sort); do
               source "${file}"
             done
+            unset file
           fi
 
 - name: Have base script
