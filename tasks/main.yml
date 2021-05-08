@@ -28,3 +28,8 @@
       src: hack-nerd-font.zip
       dest: /usr/share/fonts
   notify: Set default monospace system font
+
+- name: Have packages
+  apt:
+      name:
+          - bat
