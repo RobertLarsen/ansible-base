@@ -1,2 +1,3 @@
 ---
 user_bashrcd: "{{ ansible_user_dir }}/.local/bashrc.d"
+icon_install_path: "{{ ansible_user_dir }}/.local/share/applications"
