@@ -22,6 +22,11 @@
       src: 00-functions.conf
       dest: "{{ user_bashrcd }}"
 
+- name: Have tmx
+  copy:
+      src: 02-tmux.conf
+      dest: "{{ user_bashrcd }}"
+
 - name: Have nerd font
   become: true
   unarchive:
